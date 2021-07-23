@@ -28,7 +28,6 @@ export const startRegister = (email, password, name) => {
     return async (dispatch) => {
         const resp = await fetchSinToken('auth/new', {email, password, name}, 'POST');
         const body = await resp.json();
-        //console.log(body);
         if(body.ok){
             localStorage.setItem('token', body.token)
             // graba la fecha, hora, min y seg en que se creo el token
